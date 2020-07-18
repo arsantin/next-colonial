@@ -11,12 +11,7 @@ module.exports = {
   start: () =>
     app.prepare().then(() => {
       const server = express();
-      Object.keys(routes).map(key => {
-        return server.get(routes[key].path, (req, res) => {
-          return app.render(req, res, routes[key].page);
-        });
-      });
-
+      
       // 404 and anothers
       server.get('*', (req, res) => handle(req, res));
 
