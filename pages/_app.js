@@ -3,16 +3,7 @@ import Head from 'next/head'
 import React from 'react'
 
 export default class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {}
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-
-    return { pageProps }
-  }
-
+ 
   render() {
     const { Component, pageProps } = this.props
 
@@ -20,8 +11,8 @@ export default class MyApp extends App {
       <>
         <Head>
           <title>My new cool app</title>
-          <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet"></link>
           <link rel="stylesheet" href="./css/styles.css"></link>
+          <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet"></link>
         </Head>
         <Component {...pageProps} />
       </>
