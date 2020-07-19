@@ -6,7 +6,7 @@ function Cafes({ cafes }) {
   return (
     <ul>
       {cafes.map((cafe) => (
-        <li><Link href="/cafes-coloniais/[url]" as={`/cafes-coloniais/${cafe.url}`}><a>{cafe.nome}</a></Link></li>
+        <li key={cafe._id}><Link href="/cafes-coloniais/[url]" as={`/cafes-coloniais/${cafe.url}`}><a>{cafe.nome}</a></Link></li>
       ))}
     </ul>
   )
@@ -18,7 +18,7 @@ function Cafes({ cafes }) {
 export async function getStaticProps( {params} ) {
   // Call an external API endpoint to get cafes.
   // You can use any data fetching library
-  const res = await fetch('https://curitibacolonial.com.br/apicomercios/')
+  const res = await fetch('http://localhost:3001/apicomercios/')
   const cafes = await res.json()
   // By returning { props: cafes }, the CafesColoniais component
   // will receive `cafes` as a prop at build time

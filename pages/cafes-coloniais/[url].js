@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 
-const Cafe = () => {
+const Cafe = ({props}) => {
   const router = useRouter()
-  const { url } = router.query
+  const { url, nome } = router.query
 
   async function getStaticProps( {params} ) {
     // Call an external API endpoint to get cafes.
@@ -11,7 +11,7 @@ const Cafe = () => {
     const cafes = await res.json()
     // By returning { props: cafes }, the CafesColoniais component
     // will receive `cafes` as a prop at build time
-    
+    console.log(cafes)
   }
 
   return (
