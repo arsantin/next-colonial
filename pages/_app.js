@@ -3,10 +3,14 @@ import Head from 'next/head'
 import React from 'react'
 
 export default class MyApp extends App {
-  static async getStaticProps(context) {
-    return {
-      props: {}, // will be passed to the page component as props
+  static async getInitialProps({ Component, ctx }) {
+    let pageProps = {}
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
     }
+
+    return { pageProps }
   }
 
   render() {
