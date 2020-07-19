@@ -13,7 +13,6 @@ const cors = require('cors');
 const Comercio = require('./models/Comercio');
 const Categoria = require('./models/Categoria');
 const api = require('./routes/api');
-const profile = require('./routes/profile');
 const comercios = require('./routes/comercios');
 const categorias = require('./routes/categorias');
 
@@ -48,7 +47,6 @@ module.exports = {
 
       //inicializa as rotas
       server.use('/api/', api);
-      server.use('/profile/', profile);
       server.use('/apicomercios/', comercios);
       server.use('/apicategorias/', categorias);
       
