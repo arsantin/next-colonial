@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 
 
 const Card = styled.div`
-  background: #d1d0e4;
+  background: #f5f5f5;
   max-width: 280px;
   margin-bottom: 30px;
   padding: 20px;
@@ -29,7 +29,7 @@ function Cafes({ cafes }) {
           <Link href="/cafes-coloniais/[url]" as={`/cafes-coloniais/${cafe.url}`}><a>
           <img src="http://lorempixel.com/280/120/sports/" alt=""/>
           <h2>{cafe.nome}</h2>
-          <p>{cafe.descricao}</p>          
+          <p>{cafe.endereco}</p>          
           </a>
           </Link>
         </Card>
@@ -44,7 +44,7 @@ function Cafes({ cafes }) {
 export async function getStaticProps() {
   // Call an external API endpoint to get cafes.
   // You can use any data fetching library
-  const res = await fetch('https://curitibacolonial.com.br/apicomercios/')
+  const res = await fetch('http://localhost:3001/apicomercios/')
   const cafes = await res.json()
   // By returning { props: cafes }, the CafesColoniais component
   // will receive `cafes` as a prop at build time

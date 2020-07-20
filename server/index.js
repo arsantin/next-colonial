@@ -30,7 +30,7 @@ module.exports = {
             next(); //Não precisa redirecionar, passa para os próximos middlewares que servirão com o conteúdo desejado 
       });
       //conecta ao MongoDB
-      mongoose.connect('mongodb://localhost:27017/curitibacolonial', { useNewUrlParser: true, useUnifiedTopology: true})
+      mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true})
       mongoose.connection.once('open', ()=>{
         console.log("CONECTADO!");
       })
