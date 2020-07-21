@@ -1,18 +1,15 @@
 import Link from 'next/link'
-import Login from '../Login'
 
 
 function Menu(){
   return ( 
-  <>  
-  
+  <div>  
   <ul>
-    <li><Link href="/"><a>Mapa</a></Link></li>
+    <li><Link href="/home"><a>Home</a></Link></li>
     <li><Link href="/cafes-coloniais"><a>Café Coloniais</a></Link></li>
     <li><Link href="/contato"><a>Contato</a></Link></li>
   </ul> 
-  <Login/>
-  </>
+  </div>
   )
 }
 

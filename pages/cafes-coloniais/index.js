@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import styled from 'styled-components';
+import GoogleMap from '../../components/GoogleMap'
 
 const Wrapper = styled.div`
   display: flex;
@@ -24,6 +25,7 @@ const Card = styled.div`
 function Cafes({ cafes }) {
   return (
     <Wrapper>
+      <GoogleMap/>
       {cafes.map((cafe) => (
         <Card key={cafe._id} className="card">
           <Link href="/cafes-coloniais/[url]" as={`/cafes-coloniais/${cafe.url}`}><a>
