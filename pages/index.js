@@ -1,46 +1,60 @@
-import React from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import Link from 'next/link';
+import { useRouter } from 'next/router'
+import styled from 'styled-components';
+import GoogleMap from '../components/GoogleMap'
 
- 
-const containerStyle = {
-  width: '800px',
-  height: '500px'
-};
- 
-const center = {
-  lat: -45.4284,
-  lng: -49.2733
-};
- 
-function MyComponent() {
-  const [map, setMap] = React.useState(null)
- 
-  const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-    setMap(map)
-  }, [])
- 
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null)
-  }, [])
- 
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 980px;
+  margin: auto;
+  justify-content: space-around;
+`
+
+
+const Card = styled.div`
+  background: #f5f5f5;
+  max-width: 280px;
+  margin-bottom: 30px;
+  padding: 20px;
+`
+
+
+// cafes will be populated at build time by getStaticProps()
+function Cafes({ cafes }) {
   return (
-    <LoadScript
-      googleMapsApiKey="AIzaSyA4P-KNX5E_ekjDUQZdJhn5vFOh1B6Qq3U"
-    >
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-      >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
-      </GoogleMap>
-    </LoadScript>
+    <Wrapper>
+      <GoogleMap/>
+      {cafes.map((cafe) => (
+        <Card key={cafe._id} className="card">
+          <Link href="/cafes-coloniais/[url]" as={`/cafes-coloniais/${cafe.url}`}><a>
+          <img src="http://lorempixel.com/280/120/sports/" alt=""/>
+          <h2>{cafe.nome}</h2>
+          <p>{cafe.endereco}</p>          
+          </a>
+          </Link>
+        </Card>
+      ))}
+    </Wrapper>
   )
 }
- 
-export default React.memo(MyComponent)
+
+// This function gets called at build time on server-side.
+// It won't be called on client-side, so you can even do
+// direct database queries. See the "Technical details" section.
+export async function getStaticProps() {
+  // Call an external API endpoint to get cafes.
+  // You can use any data fetching library
+  const res = await fetch('https://curitibacolonial.com.br/apicomercios/')
+  const cafes = await res.json()
+  // By returning { props: cafes }, the CafesColoniais component
+  // will receive `cafes` as a prop at build time
+  return {
+    props: {
+      cafes,
+    },
+  }
+}
+
+export default Cafes
