@@ -5,18 +5,30 @@
   "scripts": {
     "dev": "nodemon index.js",
     "build": "next build && next export",
+<<<<<<< HEAD
     "start": "NODE_ENV=production node server/server.js"
+=======
+    "start": "NODE_ENV=production node server/app.js"
+>>>>>>> b065d9846cb5c9e75729eec23c4ba1b9b5fe25cf
   },
   "dependencies": {
+    "@react-google-maps/api": "^1.9.8",
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.25",
+    "multer": "^1.4.2",
     "next": "9.4.4",
+    "onsenui": "^2.10.10",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-google-maps": "^9.4.5",
     "react-hook-form": "^6.0.7",
+    "react-onsenui": "^1.11.2",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "latest",
     "nodemon": "^2.0.4"
   }
 }

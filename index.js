@@ -1,3 +1,3 @@
-const frontEnd = require('./server');
+const frontEnd = require('./server/app');
 
 frontEnd.start();

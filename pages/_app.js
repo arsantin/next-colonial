@@ -1,19 +1,22 @@
-// import App from 'next/app'
+import App from 'next/app'
+import Head from 'next/head'
+import React from 'react'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default class MyApp extends App {
+ 
+  render() {
+    const { Component, pageProps } = this.props
+
+    return (
+      <>
+        <Head>
+          <title>My new cool app</title>
+          <link rel="stylesheet" href="./css/styles.css"></link>
+          <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet"></link>
+          
+        </Head>
+        <Component {...pageProps} />
+      </>
+    )
+  }
 }
-
-// Only uncomment this method if you have blocking data requirements for
-// every single page in your application. This disables the ability to
-// perform automatic static optimization, causing every page in your app to
-// be server-side rendered.
-//
-// MyApp.getInitialProps = async (appContext) => {
-//   // calls page's `getInitialProps` and fills `appProps.pageProps`
-//   const appProps = await App.getInitialProps(appContext);
-//
-//   return { ...appProps }
-// }
-
-export default MyApp
