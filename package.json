@@ -5,11 +5,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "build": "next build && next export",
-<<<<<<< HEAD
     "start": "NODE_ENV=production node server/server.js"
-=======
-    "start": "NODE_ENV=production node server/app.js"
->>>>>>> b065d9846cb5c9e75729eec23c4ba1b9b5fe25cf
   },
   "dependencies": {
     "@react-google-maps/api": "^1.9.8",
