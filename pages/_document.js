@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 import Header from '../components/Header'
-
+import ThemeContextProvider from '../context/ThemeContext';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -27,9 +27,11 @@ export default class MyDocument extends Document {
       <Html>
         <Head />
         <body>
+        <ThemeContextProvider>
           <Header/>
           <Main />
           <NextScript />
+          </ThemeContextProvider>
         </body>
       </Html>
     )

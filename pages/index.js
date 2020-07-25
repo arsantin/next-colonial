@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import ThemeContextProvider from '../context/ThemeContext';
 import styled from 'styled-components';
 import Favoritos from '../components/Favoritos'
+import ThemeContextProvider from '../context/ThemeContext'
 
 const Wrapper = styled.div`
   display: flex;

@@ -3,23 +3,23 @@ import { ThemeContext } from '../../context/ThemeContext';
 
 class Favoritos extends Component{
 
-	static contextType = ThemeContext;
-
-	
-
-	render(){
-		const {isLightTheme, light, dark} = this.context;
+	render(){	
+		return(	
+		<ThemeContext.Consumer>{(context) => {
+			const {isLightTheme, light, dark} = context;
 		const theme = isLightTheme ? light : dark;
-		console.log(this.context);
-		return(
-			<div>
-				<h1 style={{background: theme.ui, color: theme.syntax}}>Meus Favoritos</h1>
+			return(
+				<div>
+				<h1>Meus Favoritos</h1>
 				<ul>
-					<li>{JSON.stringify(isLightTheme)}</li>
-					<li>rest 2</li>
+					<li style={{background: theme.ui, color: theme.syntax}}>{JSON.stringify(isLightTheme)}</li>
+					<li style={{background: theme.ui, color: theme.syntax}}>rest 2</li>
 				</ul>
 			</div>
-		);
+			)
+		}}
+		</ThemeContext.Consumer>
+		)
 	}	
 }
 
