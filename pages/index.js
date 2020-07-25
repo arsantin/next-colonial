@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Favoritos from '../components/Favoritos'
 import ThemeContextProvider from '../context/ThemeContext'
+import Card from '../components/Card'
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,12 +14,6 @@ const Wrapper = styled.div`
 `
 
 
-const Card = styled.div`
-  background: #f5f5f5;
-  max-width: 280px;
-  margin-bottom: 30px;
-  padding: 20px;
-`
 
 
 // cafes will be populated at build time by getStaticProps()
@@ -28,14 +23,7 @@ function Cafes({ cafes }) {
       <ThemeContextProvider>
       <Favoritos/>
       {cafes.map((cafe) => (
-        <Card key={cafe._id} className="card">
-          <Link href="/cafes-coloniais/[url]" as={`/cafes-coloniais/${cafe.url}`}><a>
-          <img src="http://lorempixel.com/280/120/sports/" alt=""/>
-          <h2>{cafe.nome}</h2>
-          <p>{cafe.endereco}</p>          
-          </a>
-          </Link>
-        </Card>
+        <Card cafe={cafe}/>        
       ))}
     </ThemeContextProvider>
     </Wrapper>
