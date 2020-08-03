@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import Favoritos from '../components/Favoritos'
-import ThemeContextProvider from '../context/ThemeContext'
-import Card from '../components/Card'
-import ThemeToggle from '../components/ThemeToggle'
+
+
+
+
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -19,15 +19,13 @@ const Wrapper = styled.div`
 // cafes will be populated at build time by getStaticProps()
 function Cafes({ cafes }) {
   return (
+    
     <Wrapper>
-      <ThemeContextProvider>
-      <ThemeToggle/>
-      <Favoritos/>
-      {cafes.map((cafe) => (
-        <Card cafe={cafe}/>        
-      ))}
-    </ThemeContextProvider>
+      
+      oi
+      
     </Wrapper>
+  
   )
 }
 
