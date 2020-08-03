@@ -4,6 +4,7 @@ import Favoritos from '../components/Favoritos'
 import ThemeContextProvider from '../context/ThemeContext'
 import Card from '../components/Card'
 import ThemeToggle from '../components/ThemeToggle'
+import GoogleMap from '../components/GoogleMap'
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -22,6 +23,7 @@ function Cafes({ cafes }) {
     <Wrapper>
       <ThemeContextProvider>
       <ThemeToggle/>
+      <GoogleMap/>
       <Favoritos/>
       {cafes.map((cafe) => (
         <Card cafe={cafe}/>        

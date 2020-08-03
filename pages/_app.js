@@ -13,7 +13,7 @@ export default class MyApp extends App {
         <Head>
           <title>My new cool app</title>
           <link rel="stylesheet" href="./css/styles.css"></link>
-          <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;400;800;900&display=swap" rel="stylesheet"/>
           
         </Head>
 
