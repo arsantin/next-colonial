@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import GoogleMapReact from 'google-map-react';
 
 const AnyReactComponent = ({ text, img }) => <div><img src={img}/><h2>{text}</h2></div>;
 
-class SimpleMap extends Component {
+class SimpleMap extends Component{
   static defaultProps = {
     center: {
       lat: -25.4950501,
@@ -13,22 +13,32 @@ class SimpleMap extends Component {
   }
 
   render() {
+    
     return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '50vh', width: '100%' }}>
+      <>
+    
+    <h1>MAPA</h1>
+      <div style={{ height: '80vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyA4P-KNX5E_ekjDUQZdJhn5vFOh1B6Qq3U" }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
-            lat={-25.4950501}
-            lng={-49.4208839}
-            text="My Marker"
-            img="https://casadupet.com.br/images/map-pin.png"
-          />
+          {
+            this.props.cafes.map((pin)=> {
+              return <AnyReactComponent
+              key={pin._id}
+              lat={pin.geometry.coordinates[0]}
+              lng={pin.geometry.coordinates[1]}
+              text={pin.nome}
+              img="https://curitibacolonial.com.br/cake.png"
+            />
+            })
+          }
+          
         </GoogleMapReact>
       </div>
+      </>
     );
   }
 }
