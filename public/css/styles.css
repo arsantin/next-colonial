@@ -1,20 +1,4 @@
-body{
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  background-color: #fbfafa;
-  margin: 0px;
+body {
+  font-family: 'Catamaran', sans-serif;
 }
-
-h2{
-  font-weight: 600;
-  color: #7b3822;
-}
-
-a{
-  text-decoration: none;
-}
-
-.eMhPau div:nth-child(2){
-  width: 100% !important;
-}
+/*# sourceMappingURL=styles.css.map */
