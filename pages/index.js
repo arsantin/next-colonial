@@ -25,9 +25,11 @@ function Cafes({ cafes }) {
       <ThemeToggle/>
       <GoogleMap cafes={cafes}/>
       <Favoritos/>
-      {cafes.map((cafe) => (
-        <Cartas cafe={cafe}/>        
-      ))}
+      {cafes.map((cafe) => {
+        if(cafe.fotodestaque){
+          return <Cartas cafe={cafe}/>        
+        }
+      })}
     </ThemeContextProvider>
     </Wrapper>
   )
@@ -39,7 +41,7 @@ function Cafes({ cafes }) {
 export async function getStaticProps() {
   // Call an external API endpoint to get cafes.
   // You can use any data fetching library
-  const res = await fetch('https://curitibacolonial.com.br/apicomercios/')
+  const res = await fetch('https://guiadeitapoa.com.br/apicomercios/')
   const cafes = await res.json()
   // By returning { props: cafes }, the CafesColoniais component
   // will receive `cafes` as a prop at build time

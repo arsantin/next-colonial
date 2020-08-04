@@ -31,7 +31,7 @@ class Cartas extends Component {
                 cover={
                   <img
                     alt="example"
-                    src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                    src={`http://guiadeitapoa.com.br/assets/img/${this.props.cafe.fotodestaque}`}
                   />
                 }
                 actions={[
@@ -41,9 +41,9 @@ class Cartas extends Component {
                 ]}
               >
                 <Meta
-                  avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                  avatar={<Avatar src={`http://guiadeitapoa.com.br/assets/img/${this.props.cafe.avatar}`} />}
                   title={this.props.cafe.nome}
-                  description="This is the description"
+                  description={this.props.cafe.descricao}
                 />
               </Card>
             </>
