@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Favoritos from '../components/Favoritos'
 import ThemeContextProvider from '../context/ThemeContext'
-import Card from '../components/Card'
+import Cartas from '../components/Cartas'
 import ThemeToggle from '../components/ThemeToggle'
 import GoogleMap from '../components/GoogleMap'
 const Wrapper = styled.div`
@@ -26,7 +26,7 @@ function Cafes({ cafes }) {
       <GoogleMap cafes={cafes}/>
       <Favoritos/>
       {cafes.map((cafe) => (
-        <Card cafe={cafe}/>        
+        <Cartas cafe={cafe}/>        
       ))}
     </ThemeContextProvider>
     </Wrapper>
