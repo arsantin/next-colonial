@@ -26,6 +26,9 @@ class Cartas extends Component {
           const theme = isLightTheme ? light : dark;
           return (
             <>
+            <Link href="/comercio/[url]" as={`/comercio/${this.props.cafe.url}`}>
+  <a>
+
               <Card
                 style={{ width: 300 }}
                 cover={
@@ -46,6 +49,8 @@ class Cartas extends Component {
                   description={this.props.cafe.descricao}
                 />
               </Card>
+              </a>
+              </Link>
             </>
           )}
         }     

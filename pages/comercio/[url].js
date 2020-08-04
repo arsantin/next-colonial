@@ -14,7 +14,7 @@ function Cafe(){
 
   useEffect(() => {
     axios
-      .get(`https://curitibacolonial.com.br/apicomercios/${url}`)
+      .get(`https://guiadeitapoa.com.br/apicomercios/${url}`)
       .then(res => {
         console.log(res.data[0])
         setCafe(res.data)
