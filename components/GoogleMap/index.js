@@ -25,7 +25,7 @@ class SimpleMap extends Component {
             lat={-25.4950501}
             lng={-49.4208839}
             text="My Marker"
-            img="https://casadupet.com.br/images/map-pin.png"
+            img="https://curitibacolonial.com.br/cake.png"
           />
         </GoogleMapReact>
       </div>
