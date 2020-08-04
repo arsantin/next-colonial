@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Favoritos from '../components/Favoritos'
 import ThemeContextProvider from '../context/ThemeContext'
-import Card from '../components/Card'
+import Cartas from '../components/Cartas'
 import ThemeToggle from '../components/ThemeToggle'
 import GoogleMap from '../components/GoogleMap'
 const Wrapper = styled.div`
@@ -23,11 +23,13 @@ function Cafes({ cafes }) {
     <Wrapper>
       <ThemeContextProvider>
       <ThemeToggle/>
-      <GoogleMap/>
+      <GoogleMap cafes={cafes}/>
       <Favoritos/>
-      {cafes.map((cafe) => (
-        <Card cafe={cafe}/>        
-      ))}
+      {cafes.map((cafe) => {
+        if(cafe.fotodestaque){
+          return <Cartas key={cafe._id} cafe={cafe}/>        
+        }
+      })}
     </ThemeContextProvider>
     </Wrapper>
   )
@@ -39,7 +41,7 @@ function Cafes({ cafes }) {
 export async function getStaticProps() {
   // Call an external API endpoint to get cafes.
   // You can use any data fetching library
-  const res = await fetch('https://curitibacolonial.com.br/apicomercios/')
+  const res = await fetch('https://guiadeitapoa.com.br/apicomercios/')
   const cafes = await res.json()
   // By returning { props: cafes }, the CafesColoniais component
   // will receive `cafes` as a prop at build time

@@ -1,24 +1,55 @@
-import React, { Component } from 'react';
-import Link from 'next/link'
-import { ThemeContext } from '../../context/ThemeContext'
+import { Drawer, Button, Radio, Space } from 'antd';
 
+class Header extends React.Component {
+  state = { visible: false, placement: 'left' };
 
-class Header extends Component{
-  render(){
-    return(
-      <ThemeContext.Consumer>{(context)=>{
-        console.log(context)
-        const {isLightTheme, light, dark} = context;
-        const theme = isLightTheme ? light : dark;
-        return(
-          <header style={{background: theme.ui, color: theme.syntax}}>
-          <div className="logo"><Link href="/"><a><img src="./img/logo.png" alt=""/></a></Link></div>
-          <p>Curitiba Colonial</p>
-        </header>
-      )
-      }}
-      </ThemeContext.Consumer>
-    )
+  showDrawer = () => {
+    this.setState({
+      visible: true,
+    });
+  };
+
+  onClose = () => {
+    this.setState({
+      visible: false,
+    });
+  };
+
+  onChange = e => {
+    this.setState({
+      placement: e.target.value,
+    });
+  };
+
+  render() {
+    const { placement, visible } = this.state;
+    return (
+      <>
+        <Space>
+          <Radio.Group defaultValue={placement} onChange={this.onChange}>
+            <Radio value="top">top</Radio>
+            <Radio value="right">right</Radio>
+            <Radio value="bottom">bottom</Radio>
+            <Radio value="left">left</Radio>
+          </Radio.Group>
+          <Button type="primary" onClick={this.showDrawer}>
+            Open
+          </Button>
+        </Space>
+        <Drawer
+          title="Basic Drawer"
+          placement={placement}
+          closable={false}
+          onClose={this.onClose}
+          visible={visible}
+          key={placement}
+        >
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+        </Drawer>
+      </>
+    );
   }
 }
 
