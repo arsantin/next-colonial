@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { ThemeContext } from '../../context/ThemeContext'
 import ThemeToggle from '../../components/ThemeToggle'
 
-
 class Header extends Component{
   render(){
     return(
