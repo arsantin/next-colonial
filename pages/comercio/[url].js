@@ -14,7 +14,7 @@ function Cafe(){
 
   useEffect(() => {
     axios
-      .get(`https://guiadeitapoa.com.br/apicomercios/${url}`)
+      .get(process.env.FETCH_URL`${url}`)
       .then(res => {
         console.log(res.data[0])
         setCafe(res.data)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link'
 import { ThemeContext } from '../../context/ThemeContext'
+import ThemeToggle from '../../components/ThemeToggle'
 
 
 class Header extends Component{
@@ -14,6 +15,7 @@ class Header extends Component{
           <header style={{background: theme.ui, color: theme.syntax}}>
           <div className="logo"><Link href="/"><a><img src="./img/logo.jpg" alt=""/></a></Link></div>
           <p>GUIA DE ITAPOÁ</p>
+          <ThemeToggle/>
         </header>
       )
       }}

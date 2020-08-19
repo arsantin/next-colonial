@@ -1,10 +1,8 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import Favoritos from '../components/Favoritos'
-import ThemeContextProvider from '../context/ThemeContext'
 import Cartas from '../components/Cartas'
 import Contato from '../components/Contato'
-import ThemeToggle from '../components/ThemeToggle'
 import GoogleMap from '../components/GoogleMap'
 const Wrapper = styled.div`
   display: flex;
@@ -15,24 +13,20 @@ const Wrapper = styled.div`
   justify-content: space-around;
 `
 
-
-
-
 // cafes will be populated at build time by getStaticProps()
 function Cafes({ cafes }) {
+  console.log("ok")
   return (
-    <Wrapper>
-      <ThemeContextProvider>
-      <ThemeToggle/>
+    <Wrapper> 
       <GoogleMap cafes={cafes}/>
-      <Favoritos/>
+     
       {cafes.map((cafe) => {
         if(cafe.fotodestaque){
           return <Cartas key={cafe._id} cafe={cafe}/>        
         }
       })}
       <Contato/>
-    </ThemeContextProvider>
+    
     </Wrapper>
   )
 }
@@ -43,7 +37,7 @@ function Cafes({ cafes }) {
 export async function getStaticProps() {
   // Call an external API endpoint to get cafes.
   // You can use any data fetching library
-  const res = await fetch('https://guiadeitapoa.com.br/apicomercios/')
+  const res = await fetch(process.env.FETCH_URL)
   const cafes = await res.json()
   // By returning { props: cafes }, the CafesColoniais component
   // will receive `cafes` as a prop at build time

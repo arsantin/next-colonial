@@ -4,6 +4,8 @@ import React from 'react'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import "antd/dist/antd.css";
+import ThemeContextProvider from '../context/ThemeContext';
+import Header from '../components/Header'
 
 Router.events.on("routeChangeStart", (url)=>{
   console.log(`Loading ${url}`);
@@ -25,6 +27,7 @@ export default class MyApp extends App {
 
     return (
       <>
+      
         <Head>
           <title>My new cool app</title>
           <link rel="stylesheet" href="./css/styles.css"></link>
@@ -34,8 +37,10 @@ export default class MyApp extends App {
           <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;400;800;900&display=swap" rel="stylesheet"/>
           
         </Head>
-
-        <Component {...pageProps} />
+        <ThemeContextProvider>
+          <Header/>
+          <Component {...pageProps}/>
+        </ThemeContextProvider>
       </>
     )
   }

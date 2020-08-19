@@ -8,17 +8,18 @@ class ThemeContextProvider extends Component{
 		isLightTheme: true,
 		light: {
 			syntax: '#555',
-			ui: '#ddd',
-			bg: '#eee'
+			ui: 'pink',
+			bg: '#000'
 		},
 		dark: {
 			syntax: '#ddd',
 			ui: '#502315',
-			bg: '#555'
+			bg: '#999'
 		}
 	}
 
 	toggleTheme =()=> {
+		console.log("mudou o tema")
 		this.setState({isLightTheme: !this.state.isLightTheme});
 	}
 
