@@ -1,19 +1,16 @@
-import React, {Component} from 'react'
+import React, {Component, useContext} from 'react'
 import { ThemeContext } from '../../context/ThemeContext'
-
 import { Switch } from 'antd';
 
-class ThemeToggle extends Component{
-	static contextType = ThemeContext
-	render(){
-		const {toggleTheme} = this.context;
+const ThemeToggle = () =>{
+
+		const {toggleTheme} = useContext(ThemeContext);
+
 		return(
 			<>
-			<Switch checkedChildren="dia" unCheckedChildren="noite" defaultChecked onClick={toggleTheme}/>   
-			
+			<Switch checkedChildren="noite" unCheckedChildren="dia" defaultChecked onClick={toggleTheme}/>   			
 			</>
 		)
 	}
-}
 
 export default ThemeToggle

@@ -1,18 +1,16 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../../context/ThemeContext'
+import Contato from '../Contato'
 import styled from 'styled-components'
 
 
 
 const Rodape = styled.footer`
-    height: 220px;
-    background-color: red;
+    height: 300px;
+    margin-top: 50px;
     width: 100%;
     display: flex;
-    justify-content: center;
-    .middle{
-        background-color: #333;
-    }
+    justify-content: center;  
 `
 
 
@@ -23,13 +21,9 @@ export default function Footer(){
         <>           
         <Rodape style={{ background: theme.ui, color: theme.syntax }}>
         <div className="middle">
-        <ul>
-            <li>link 1</li>
-            <li>link 1</li>
-            <li>link 1</li>
-            <li>link 1</li>
-            <li>link 1</li>
-        </ul>
+        <h1>GUIA DE ITAPOÁ</h1>
+        <Contato />
+
         </div>
     </Rodape>   
     </>

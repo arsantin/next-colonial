@@ -7,14 +7,14 @@ class ThemeContextProvider extends Component{
 	state ={
 		isLightTheme: true,
 		light: {
-			syntax: '#555',
+			syntax: '#fff',
 			ui: 'indigo',
-			bg: '#000'
+			bg: '#555'
 		},
 		dark: {
-			syntax: '#ddd',
-			ui: '#502315',
-			bg: '#999'
+			syntax: '#000',
+			ui: 'antiquewhite',
+			bg: 'yellow'
 		}
 	}
 

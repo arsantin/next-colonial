@@ -2,7 +2,6 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Favoritos from '../components/Favoritos'
 import Cartas from '../components/Cartas'
-import Contato from '../components/Contato'
 import GoogleMap from '../components/GoogleMap'
 const Wrapper = styled.div`
   display: flex;
@@ -25,8 +24,6 @@ function Cafes({ cafes }) {
           return <Cartas key={cafe._id} cafe={cafe}/>        
         }
       })}
-      <Contato/>
-    
     </Wrapper>
   )
 }

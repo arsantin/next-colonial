@@ -12,7 +12,7 @@ function Header() {
   return (
     <AuthContext.Consumer>{(authContext) => (
       <ThemeContext.Consumer>{(themeContext) => {
-        const { isLogged, toggleAuth } = authContext;
+        const { isLogged } = authContext;
         const { isLightTheme, light, dark } = themeContext;
         const theme = isLightTheme ? light : dark;
         return (
