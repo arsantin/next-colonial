@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from '../../context/ThemeContext'
 import styled from 'styled-components'
+
+
 
 const Rodape = styled.footer`
     height: 220px;
@@ -14,9 +17,11 @@ const Rodape = styled.footer`
 
 
 export default function Footer(){
+    const { isLightTheme, light, dark } = useContext(ThemeContext);
+    const theme = isLightTheme ? light : dark;
     return(
-        <>
-    <Rodape>
+        <>           
+        <Rodape style={{ background: theme.ui, color: theme.syntax }}>
         <div className="middle">
         <ul>
             <li>link 1</li>
@@ -26,7 +31,7 @@ export default function Footer(){
             <li>link 1</li>
         </ul>
         </div>
-    </Rodape>
+    </Rodape>   
     </>
     )
 } 
