@@ -5,10 +5,11 @@ import Router from 'next/router'
 import NProgress from 'nprogress'
 import "antd/dist/antd.css";
 import ThemeContextProvider from '../context/ThemeContext';
+import AuthContextProvider from '../context/AuthContext'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
-Router.events.on("routeChangeStart", (url)=>{
-  console.log(`Loading ${url}`);
+Router.events.on("routeChangeStart", (url)=>{ 
   NProgress.start();
 });
 
@@ -38,8 +39,11 @@ export default class MyApp extends App {
           
         </Head>
         <ThemeContextProvider>
+          <AuthContextProvider>
           <Header/>
           <Component {...pageProps}/>
+          <Footer/>
+          </AuthContextProvider>
         </ThemeContextProvider>
       </>
     )

@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import Header from '../components/Header'
 
 
 export default class MyDocument extends Document {
@@ -28,7 +27,7 @@ export default class MyDocument extends Document {
         <Head />
         <body>
           <Main />
-          <NextScript />
+          <NextScript />      
         </body>
       </Html>
     )     

@@ -8,17 +8,19 @@ export default function Contato() {
   console.log(watch("example"));
 
   return (
-   
-    <form onSubmit={handleSubmit(onSubmit)}>
-   
-      <input name="example" defaultValue="test" ref={register} />
-      
-    
-      <input name="exampleRequired" ref={register({ required: true })} />
-  
-      {errors.exampleRequired && <span>This field is required</span>}
-      
-      <input type="submit" />
-    </form>
-  );
+    <>
+      <h2>contato</h2>
+      <form onSubmit={handleSubmit(onSubmit)}>
+
+        <input name="example" defaultValue="test" ref={register} />
+
+
+        <input name="exampleRequired" ref={register({ required: true })} />
+
+        {errors.exampleRequired && <span>This field is required</span>}
+
+        <input type="submit" />
+      </form>
+  </>
+        );
 }

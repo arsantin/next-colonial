@@ -8,7 +8,7 @@ class ThemeContextProvider extends Component{
 		isLightTheme: true,
 		light: {
 			syntax: '#555',
-			ui: 'pink',
+			ui: 'indigo',
 			bg: '#000'
 		},
 		dark: {
