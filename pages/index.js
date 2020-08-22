@@ -1,8 +1,7 @@
-import Link from 'next/link';
 import styled from 'styled-components';
-import Favoritos from '../components/Favoritos'
 import Cartas from '../components/Cartas'
 import GoogleMap from '../components/GoogleMap'
+
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -17,13 +16,11 @@ function Cafes({ cafes }) {
   console.log("ok")
   return (
     <Wrapper> 
-      <GoogleMap cafes={cafes}/>
-     
-      {cafes.map((cafe) => {
-        if(cafe.fotodestaque){
-          return <Cartas key={cafe._id} cafe={cafe}/>        
-        }
-      })}
+      <GoogleMap cafes={cafes}/> 
+      
+      {cafes.map((cafe) => {        
+          return <Cartas key={cafe._id} cafe={cafe}/>
+      })}      
     </Wrapper>
   )
 }

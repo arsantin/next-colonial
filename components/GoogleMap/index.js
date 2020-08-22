@@ -24,8 +24,9 @@ class SimpleMap extends Component {
           const theme = isLightTheme ? light : dark;
           return (
             <>
+            
             <h1>MAPA</h1>
-            <div style={{ height: '80vh', width: '100%', padding: '30px', background: theme.ui, color: theme.syntax }}>
+            <div style={{ height: '80vh', width: '100%', padding: '30px', background: theme.ui, color: theme.syntax }} className="mapa">
               <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyA4P-KNX5E_ekjDUQZdJhn5vFOh1B6Qq3U" }}
                 defaultCenter={this.props.center}
@@ -44,7 +45,7 @@ class SimpleMap extends Component {
                 }
 
               </GoogleMapReact>
-            </div>
+            </div>           
             </>
       )
         }}

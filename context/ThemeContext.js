@@ -13,7 +13,7 @@ class ThemeContextProvider extends Component{
 		},
 		dark: {
 			syntax: '#000',
-			ui: 'antiquewhite',
+			ui: '#de9637',
 			bg: 'yellow'
 		}
 	}

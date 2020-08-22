@@ -28,12 +28,15 @@ function Cafe(){
 
 
 return (
-  <>
+  <>  
     <div>{
       cafe.map(cada => (
         <div className="card" key={cada._id}>
-          <h1>{cada.nome}</h1>
+          <img src={`https://guiadeitapoa.com.br/assets/img/${cada.fotodestaque}`} />
+          <h1>{cada.nome}</h1>                         
           <p>{cada.descricao}</p>
+          <p>{JSON.stringify(cada.fotos)}</p>
+          <p>{cada.telefone}</p>
           <p>{cada.endereco}</p>
         </div>
         

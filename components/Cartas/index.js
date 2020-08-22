@@ -30,11 +30,11 @@ class Cartas extends Component {
   <a>
 
               <Card
-                style={{ background: theme.ui, color: theme.syntax, width: '220px' }}
+                style={{ background: theme.ui, color: theme.syntax, width: '250px' }}
                 cover={
                   <img
                     alt="example"
-                    src={`http://guiadeitapoa.com.br/assets/img/${this.props.cafe.fotodestaque}`}
+                    src={`http://guiadeitapoa.com.br/assets/img/${this.props.cafe.avatar}`}
                   />
                 }
                 actions={[
@@ -46,7 +46,7 @@ class Cartas extends Component {
                 <Meta
                   avatar={<Avatar src={`http://guiadeitapoa.com.br/assets/img/${this.props.cafe.avatar}`} />}
                   title={this.props.cafe.nome}
-                  description={this.props.cafe.descricao}
+                  description={this.props.cafe.categoria.nome}
                 />
               </Card>
               </a>
