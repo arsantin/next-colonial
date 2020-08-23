@@ -10,14 +10,15 @@ const ThemeContextProvider = (props) => {
 	const [dark, setdark] = useState({syntax: '#000', ui: '#de9637', bg: 'yellow'})
 	
 
-	function toggleTheme(){
+	const toggleTheme = (props) =>{
 		console.log("mudou o tema")
-		const setisLightTheme = ({isLightTheme: !isLightTheme});
+		setisLightTheme(!isLightTheme)
+		console.log(isLightTheme)
 	}
 
 	
 		return(
-			<ThemeContext.Provider value={{isLightTheme, light, dark, toggleTheme: toggleTheme()}}>
+			<ThemeContext.Provider value={{isLightTheme, light, dark, toggleTheme}}>
 				{props.children}
 			</ThemeContext.Provider>
 		)	
