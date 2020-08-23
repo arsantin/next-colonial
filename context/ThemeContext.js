@@ -1,35 +1,26 @@
-import {createContext, Component} from 'react';
-
+import {createContext, useReducer, useState} from 'react';
 
 export const ThemeContext = createContext();
 
-class ThemeContextProvider extends Component{
-	state ={
-		isLightTheme: true,
-		light: {
-			syntax: '#fff',
-			ui: 'indigo',
-			bg: '#555'
-		},
-		dark: {
-			syntax: '#000',
-			ui: '#de9637',
-			bg: 'yellow'
-		}
-	}
 
-	toggleTheme =()=> {
+
+const ThemeContextProvider = (props) => {
+	const [isLightTheme, setisLightTheme] = useState(true);
+	const [light, setlight] = useState({syntax: '#fff', ui: 'indigo', bg: '#555'});
+	const [dark, setdark] = useState({syntax: '#000', ui: '#de9637', bg: 'yellow'})
+	
+
+	function toggleTheme(){
 		console.log("mudou o tema")
-		this.setState({isLightTheme: !this.state.isLightTheme});
+		const setisLightTheme = ({isLightTheme: !isLightTheme});
 	}
 
-	render(){
+	
 		return(
-			<ThemeContext.Provider value={{...this.state, toggleTheme:this.toggleTheme}}>
-				{this.props.children}
+			<ThemeContext.Provider value={{isLightTheme, light, dark, toggleTheme: toggleTheme()}}>
+				{props.children}
 			</ThemeContext.Provider>
-		)
-	}
+		)	
 }
 
 export default ThemeContextProvider;
