@@ -1,14 +1,17 @@
-import React, {useContext} from 'react'
+import React, {useContext, useReducer} from 'react'
 import { ThemeContext } from '../../context/ThemeContext'
 import { Switch } from 'antd';
 
-const ThemeToggle = (props) =>{
+
+const ThemeToggle = () =>{
 
 		const {toggleTheme} = useContext(ThemeContext);
-		console.log(toggleTheme)
+
+		
 		return(
 			<>
-			<Switch checkedChildren="noite" unCheckedChildren="dia" defaultChecked onClick={toggleTheme}/>   			
+			<Switch checkedChildren="noite" unCheckedChildren="dia" defaultChecked 
+			onClick={toggleTheme}/>   			
 			</>
 		)
 	}
