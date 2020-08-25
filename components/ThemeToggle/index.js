@@ -4,10 +4,7 @@ import { Switch } from 'antd';
 
 
 const ThemeToggle = () =>{
-
-		const {toggleTheme} = useContext(ThemeContext);
-
-		
+		const {toggleTheme} = useContext(ThemeContext);		
 		return(
 			<>
 			<Switch checkedChildren="noite" unCheckedChildren="dia" defaultChecked 

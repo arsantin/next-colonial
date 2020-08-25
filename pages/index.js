@@ -17,10 +17,15 @@ function Cafes({ cafes }) {
   return (
     <Wrapper> 
       <GoogleMap cafes={cafes}/> 
-      
+      <h2>DESTAQUES</h2>
       {cafes.map((cafe) => {        
-          return <Cartas key={cafe._id} cafe={cafe}/>
-      })}      
+          {
+            if(cafe.fotodestaque){
+              return <Cartas key={cafe._id} cafe={cafe}/>
+            }
+          }
+      })} 
+      <button>VER TODO O COMÉRCIO</button>     
     </Wrapper>
   )
 }
