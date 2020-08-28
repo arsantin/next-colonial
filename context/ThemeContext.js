@@ -6,7 +6,7 @@ export const ThemeContext = createContext();
 
 const ThemeContextProvider = (props) => {
 	const [isLightTheme, dispatch] = useReducer(isLightReducer, '#000');	
-	const [light, setlight] = useState({syntax: '#fff', ui: 'indigo', bg: '#555'});
+	const [light, setlight] = useState({syntax: '#666', ui: '#fff', bg: '#666'});
 	const [dark, setdark] = useState({syntax: '#000', ui: '#de9637', bg: 'yellow'});	
 
 	const toggleTheme = () =>{		

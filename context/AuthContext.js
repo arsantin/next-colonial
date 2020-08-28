@@ -5,6 +5,8 @@ export const AuthContext = createContext();
 const AuthContextProvider = (props)=> {
 	const [isLogged, setisLogged] = useState(true);
 
+	
+
 	function toggleAuth() {
 		const setisLogged = ({isLogged: !isLogged});
 	}

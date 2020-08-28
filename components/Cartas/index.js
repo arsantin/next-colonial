@@ -30,7 +30,7 @@ class Cartas extends Component {
   <a>
 
               <Card
-                style={{ background: theme.ui, color: theme.syntax, width: '250px' }}
+                style={{ background: theme.ui, color: theme.syntax, width: '220px' }}
                 cover={
                   <img
                     alt="example"

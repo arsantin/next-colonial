@@ -14,7 +14,11 @@ const Cabecalho = styled.div`
     display: flex;
     position: fixed;
     z-index: 1;
-    width: 100%;
+    width: 100%;    
+    box-shadow: -3px -3px 7px 0px #000;
+    padding: 20px;
+    align-items: center;    
+    }
   }
 `  
 

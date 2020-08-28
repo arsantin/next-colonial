@@ -1,9 +1,16 @@
 import { useRouter } from 'next/router'
-import fetch from 'node-fetch';
+import styled from 'styled-components'
 import {useState, useEffect} from 'react'
 import axios from 'axios';
+import Slide from '../../components/Slide'
 
-
+const Wrapper = styled.div`
+  max-width: 650px;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  padding: 60px 0px;  
+`
 
 function Cafe(){
   const [cafe, setCafe] = useState([]);
@@ -28,19 +35,20 @@ function Cafe(){
 
 
 return (
-  <>  
+  <><Wrapper>
     <div>{
       cafe.map(cada => (
         <div className="card" key={cada._id}>
           <img src={`https://guiadeitapoa.com.br/assets/img/${cada.fotodestaque}`} />
-          <h1>{cada.nome}</h1>                         
-          <p>{cada.descricao}</p>
-         
+          <h1>{cada.nome}</h1>
+          <Slide/>                
+          <p>{cada.descricao}</p>         
           <p>{cada.telefone}</p>
           <p>{cada.endereco}</p>
         </div>
         
       ))}</div>
+    </Wrapper>  
   </>
   )
 }

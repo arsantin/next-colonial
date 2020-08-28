@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   max-width: 980px;
   margin: auto;
   justify-content: space-around;
+  padding-top: 200px;
 `
 
 // cafes will be populated at build time by getStaticProps()

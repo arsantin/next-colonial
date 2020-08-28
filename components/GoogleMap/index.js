@@ -26,7 +26,7 @@ class SimpleMap extends Component {
             <>
             
             <h1>MAPA</h1>
-            <div style={{ height: '80vh', width: '100%', padding: '30px', background: theme.ui, color: theme.syntax }} className="mapa">
+            <div style={{ height: '550px', width: '100%', padding: '30px', background: theme.ui, color: theme.syntax }} className="mapa">
               <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyA4P-KNX5E_ekjDUQZdJhn5vFOh1B6Qq3U" }}
                 defaultCenter={this.props.center}
