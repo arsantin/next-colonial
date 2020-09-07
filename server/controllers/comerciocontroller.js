@@ -6,7 +6,7 @@ ObjectID = require('mongodb').ObjectID
 module.exports = { 
   async index(req, res){
     try{
-      const todoscomercios = await Comercio.find({})
+      const todoscomercios = Comercio.find({})
         .populate('categoria')
         .then(function(cat){       
           res.json(cat)

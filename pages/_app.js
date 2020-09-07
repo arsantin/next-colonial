@@ -35,7 +35,7 @@ export default class MyApp extends App {
           <link
   rel="stylesheet"
   type="text/css"
-  charset="UTF-8"
+  charSet="UTF-8"
   href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
 />
 <link
@@ -44,7 +44,8 @@ export default class MyApp extends App {
   href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
 />
 
-          <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Varela+Round&display=swap" rel="stylesheet"/>        </Head>
+          <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Varela+Round&display=swap" rel="stylesheet"/>
+        </Head>
         <ThemeContextProvider>
           <AuthContextProvider>
             <Header />

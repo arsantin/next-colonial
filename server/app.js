@@ -46,7 +46,7 @@ module.exports = {
       server.use(cors());
 
       //inicializa as rotas
-      server.use('/api/', api);
+      
       server.use('/apicomercios/', comercios);
       server.use('/apicategorias/', categorias);
       
