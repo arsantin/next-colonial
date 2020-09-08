@@ -23,6 +23,8 @@ const Cabecalho = styled.div`
 `  
 
 const Header =()=> {
+
+
   
 
   return (
@@ -37,6 +39,7 @@ const Header =()=> {
             <div className="logo"><Link href="/"><a><img src="/img/logo.jpg" alt="" /></a></Link></div>
             <h3>O GUIA DA SUA PRAIA</h3>
             <Menu/>
+            <button onClick={()=>{pegaLocal()}}>GPS</button>
             <Login/>
             {isLogged ? <Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} /> : 'deslogado'}
             <ThemeToggle />                        

@@ -8,6 +8,8 @@ import ThemeContextProvider from '../context/ThemeContext';
 import AuthContextProvider from '../context/AuthContext'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
 
 Router.events.on("routeChangeStart", (url) => {
   NProgress.start();
@@ -25,6 +27,16 @@ export default class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props
+
+    // optional configuration
+const options = {
+  // you can also just use 'bottom center'
+  position: positions.BOTTOM_CENTER,
+  timeout: 5000,
+  offset: '30px',
+  // you can also just use 'scale'
+  transition: transitions.SCALE
+}
 
     return (
       <>
@@ -46,6 +58,7 @@ export default class MyApp extends App {
 
           <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Varela+Round&display=swap" rel="stylesheet"/>
         </Head>
+        <AlertProvider template={AlertTemplate} {...options}>
         <ThemeContextProvider>
           <AuthContextProvider>
             <Header />
@@ -53,6 +66,7 @@ export default class MyApp extends App {
             <Footer />
           </AuthContextProvider>
         </ThemeContextProvider>
+        </AlertProvider>
       </>
     )
   }

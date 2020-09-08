@@ -72,7 +72,8 @@ const ComercioSchema = new Schema({
     type: String
   },   
   geometry: {
-    type: GeoSchema
+    type: GeoSchema,
+    required: false
   }
 }, { strict: false })
 

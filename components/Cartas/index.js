@@ -26,7 +26,7 @@ class Cartas extends Component {
           const theme = isLightTheme ? light : dark;
           return (
             <>
-            <Link href="/comercio/[url]" as={`/comercio/cafe.url`}>
+            <Link href="/comercio/[url]" as={`/comercio/${this.props.cafe.url}`}>
   <a>
 
               <Card
@@ -34,7 +34,7 @@ class Cartas extends Component {
                 cover={
                   <img
                     alt="example"
-                    src={`http://guiadeitapoa.com.br/assets/img/this.cafe.avatar.png`}
+                    src={`http://guiadeitapoa.com.br/assets/img/${this.props.cafe.avatar}`}
                   />
                 }
                 actions={[
@@ -44,9 +44,9 @@ class Cartas extends Component {
                 ]}
               >
                 <Meta
-                  avatar={<Avatar src={`http://guiadeitapoa.com.br/assets/img/cafe.avatar.png`} />}
+                  avatar={<Avatar src={`http://guiadeitapoa.com.br/assets/img/${this.props.cafe.avatar}`} />}
                   title={this.props.cafe.nome}
-                  description="oi"
+                  description={this.props.cafe.categoria.nome}
                 />
               </Card>
               </a>

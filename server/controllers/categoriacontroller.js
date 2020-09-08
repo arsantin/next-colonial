@@ -27,4 +27,14 @@ module.exports = {
     }catch(e) {    
       return console.log("erro:", e); // passa o objeto de exceção para o manipulador de erro
     }
-}}
+},
+async store(req, res){
+  console.log(req.body)
+  
+  
+    const categoria = await Categoria.create(req.body);  
+    console.log(categoria)      
+    
+  
+}
+}
