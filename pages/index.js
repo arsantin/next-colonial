@@ -17,7 +17,7 @@ function Cafes({ cafes }) {
   console.log("ok")
   return (
     <Wrapper> 
-      <GoogleMap cafes={cafes}/> 
+
       <h2>DESTAQUES</h2>
       {cafes.map((cafe) => {        
           {

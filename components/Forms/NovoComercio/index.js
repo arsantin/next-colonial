@@ -36,10 +36,7 @@ const NovoComercio = () => {
       console.log(error);
     })
        
-  })
-  
-
-  
+  }) 
 
   const onSubmit = values => {
     console.log("values", values);
@@ -50,7 +47,7 @@ const NovoComercio = () => {
       })
       .catch(function (error) {
         console.log(error);
-        alert.show('Ooops! Algo deu errado!!')
+        alert.show('Ops! Algo deu errado!!')
       });
   }
 

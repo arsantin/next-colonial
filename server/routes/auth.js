@@ -4,27 +4,40 @@ const fetch = require('node-fetch');
 
 /////////////////////AUTH///////////////////////////
 
-//const authCheck = (req, res, next) => {
- // console.log(req.user.role)
- // if(req.user.role === "admin"){    
-  //  next();
- // }else{
-  //  res.redirect('/nao-autorizado');
-    //calls next function
- // }
-//}
+const authCheck = (req, res, next) => { 
+ if(req != "admin"){  
+   res.send('/minha-conta/profile', [profile])    
+  next();
+ }else{
+   console.log("prof", profile)
+  res.redirect('/profile', profile);
+ }
+}
 
-//authlogin
-
-router.get('/login', (req,res) => {
-  res.render('login');
-})
 
 //google
 
-router.get('/google', passport.authenticate('google', {
-  scope: ['profile']
-}));
+router.get('/google', passport.authenticate('google', {scope: ['profile']}),
+  function(req, res){
+    console.log("google")
+  }
+)
+
+//calback do google login
+
+router.get('/google/redirect',
+passport.authenticate('google', {failureRedirect: '/'}),
+function(req, res){ 
+  if(req.user){
+    res.redirect('/profile')
+  }else{
+    res.redirect('/contato')
+  }
+  
+}
+)
+
+
 
 //logout
 
@@ -89,11 +102,7 @@ router.get('/cadastrocategoria', (req, res, next) => {
   })
 
 
-//calback do google login
 
-router.get('/google/redirect', passport.authenticate('google'), (req, res) => {  
-  res.redirect('/profile/')
-})
 
 
 

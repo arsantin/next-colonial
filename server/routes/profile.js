@@ -12,10 +12,9 @@ const authCheck = (req, res, next) => {
   }
 }
 
-router.get('/', authCheck, (req, res) => {   
-  const role = req.user;    
-  res.render('profile', {user: req.user});
- 
+router.get('/', (req, res) => {   
+  const role = res; 
+  console.log("role", role) 
 })
 
 module.exports = router
