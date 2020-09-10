@@ -60,7 +60,7 @@ module.exports = {
       server.use(cors());
 
       //inicializa as rotas
-      server.use('/prooooofile/', profile);     
+      server.use('/profile/', profile);     
       server.use('/minha-conta/', auth);
       server.use('/apicomercios/', comercios);
       server.use('/apicategorias/', categorias);
