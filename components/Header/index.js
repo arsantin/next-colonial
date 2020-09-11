@@ -40,10 +40,11 @@ const Header =()=> {
           <header style={{ background: theme.ui, color: theme.syntax }}>
             <div className="logo"><Link href="/"><a><img src="/img/logo.jpg" alt="" /></a></Link></div>
             <h3>O GUIA DA SUA PRAIA</h3>
-            <Menu/>            
+            <ThemeToggle />
+            <Menu/>                        
             {isLogged.user != "" ? (
               <>                
-                <Link href="/minha-conta/profile">
+                <Link href="/profile">
                   <a className="nav-link">Profile</a>
                 </Link>
                 <Link href="/minha-conta/logout">
@@ -56,7 +57,7 @@ const Header =()=> {
                 <a className="nav-link">Log In</a>
               </Link>
             )}
-            <ThemeToggle />                        
+                                    
           </header>
           </Cabecalho>
         )

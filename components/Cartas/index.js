@@ -46,7 +46,7 @@ class Cartas extends Component {
                 <Meta
                   avatar={<Avatar src={`http://guiadeitapoa.com.br/assets/img/${this.props.cafe.avatar}`} />}
                   title={this.props.cafe.nome}
-                  description={this.props.cafe.categoria.nome}
+                  description="descricao aqui"
                 />
               </Card>
               </a>

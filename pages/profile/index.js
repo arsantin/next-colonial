@@ -2,16 +2,13 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 
-const Profile = ({user}) => {
-
-
-
+const Profile = () => {
   return(
     <>
   <div>Meu Perfil</div> 
   
-   <h1>{user.username}</h1>
-    <img src={user.thumbnail} />
+   <h1>NOME</h1>
+   
     </>
   )  
 }
