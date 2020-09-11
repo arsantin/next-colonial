@@ -31,6 +31,8 @@ const Header =()=> {
     <AuthContext.Consumer>{(authContext) => (
       <ThemeContext.Consumer>{(themeContext) => {
         const { isLogged } = authContext;
+
+        console.log("logado?", isLogged)
         const { isLightTheme, light, dark } = themeContext;
         const theme = isLightTheme ? light : dark;
         return (
@@ -38,10 +40,22 @@ const Header =()=> {
           <header style={{ background: theme.ui, color: theme.syntax }}>
             <div className="logo"><Link href="/"><a><img src="/img/logo.jpg" alt="" /></a></Link></div>
             <h3>O GUIA DA SUA PRAIA</h3>
-            <Menu/>
-            <button onClick={()=>{pegaLocal()}}>GPS</button>
-            <Login/>
-            {isLogged ? <Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} /> : 'deslogado'}
+            <Menu/>            
+            {isLogged.user != "" ? (
+              <>                
+                <Link href="/minha-conta/profile">
+                  <a className="nav-link">Profile</a>
+                </Link>
+                <Link href="/minha-conta/logout">
+                  <a className="nav-link">Log Out</a>
+                </Link>
+                <Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} />
+              </>
+            ) : (
+              <Link href="/minha-conta/google">
+                <a className="nav-link">Log In</a>
+              </Link>
+            )}
             <ThemeToggle />                        
           </header>
           </Cabecalho>

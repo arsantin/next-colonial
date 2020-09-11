@@ -29,7 +29,7 @@ router.get('/google/redirect',
 passport.authenticate('google', {failureRedirect: '/'}),
 function(req, res){ 
   if(req.user){
-    res.redirect('/profile')
+    res.redirect('/')
   }else{
     res.redirect('/contato')
   }

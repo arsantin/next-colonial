@@ -4,7 +4,18 @@ import axios from 'axios'
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props)=> {
-	const [isLogged, setisLogged] = useState(true);
+	const [isLogged, setisLogged] = useState([]);	
+  useEffect(()=>{
+    axios.get('/profile/perfil')
+  .then(function (response) {
+    const dados = {user: response.data}
+    setisLogged(dados)
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  },[])
 
 		
 
