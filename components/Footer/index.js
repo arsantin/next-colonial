@@ -21,7 +21,7 @@ export default function Footer(){
         <>           
         <Rodape style={{ background: theme.ui, color: theme.syntax }}>
         <div className="middle">
-        <h1>GUIA DE ITAPOÁ</h1>
+        
         <Contato />
 
         </div>

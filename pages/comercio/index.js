@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   max-width: 980px;
   margin: auto;
   justify-content: space-around;
-  padding-top: 200px;
   h2{
       flex-basis: 100%;
   }

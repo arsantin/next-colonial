@@ -18,6 +18,12 @@ const Cards = styled.div`
 
 
 class Cartas extends Component {
+
+  favoritar(_id){   
+    console.log("favoritou", _id);
+  }
+
+
   render() {
     return (
       <>
@@ -51,6 +57,7 @@ class Cartas extends Component {
               </Card>
               </a>
               </Link>
+              <button value={this.props.cafe._id} onClick={()=>{this.favoritar(this.props.cafe._id)}}>favoritar</button>
             </>
           )}
         }     

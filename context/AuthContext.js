@@ -8,8 +8,9 @@ const AuthContextProvider = (props)=> {
   useEffect(()=>{
     axios.get('/profile/perfil')
   .then(function (response) {
-    const dados = {user: response.data}
+    const dados = response.data
     setisLogged(dados)
+    console.log("ta logado??", dados);
   })
   .catch(function (error) {
     // handle error

@@ -42,15 +42,15 @@ const Header =()=> {
             <h3>O GUIA DA SUA PRAIA</h3>
             <ThemeToggle />
             <Menu/>                        
-            {isLogged.user != "" ? (
+            {isLogged != "" ? (
               <>                
                 <Link href="/profile">
-                  <a className="nav-link">Profile</a>
+                  <a className="nav-link"><Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} /></a>
                 </Link>
                 <Link href="/minha-conta/logout">
                   <a className="nav-link">Log Out</a>
                 </Link>
-                <Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} />
+                
               </>
             ) : (
               <Link href="/minha-conta/google">

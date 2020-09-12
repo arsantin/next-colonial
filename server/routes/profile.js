@@ -15,7 +15,6 @@ const authCheck = (req, res, next) => {
 
 router.get('/perfil', function(req, res){  
  const {user} = req
-  console.log("res", user)
   res.status(200).json(user)
 }
 )
