@@ -27,8 +27,8 @@ Router.events.on("routeChangeError", (url) => {
 });
 
 const MainWrapper = styled.div`  
-  padding: 150px 20px 60px 20px;  
-  background-color: #ddd;
+  padding: 0px;  
+  background-color: #fff;
 `
 
 const MyApp =(props)=>{
@@ -65,6 +65,7 @@ const MyApp =(props)=>{
           <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Varela+Round&display=swap" rel="stylesheet" />
         </Head>
         <AlertProvider template={AlertTemplate} {...options}>
+       
           <ThemeContextProvider>
             <AuthContextProvider>
               <Header />
@@ -74,6 +75,7 @@ const MyApp =(props)=>{
               <Footer />
             </AuthContextProvider>
           </ThemeContextProvider>
+        
         </AlertProvider>
       </>
     )

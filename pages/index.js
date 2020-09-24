@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import Cartas from '../components/Cartas'
+import Banner from '../components/Banner'
 import GoogleMap from '../components/GoogleMap'
 
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 980px;
+  max-width: 100%;
   margin: auto;
   justify-content: space-around;
-  padding-top: 200px;
+  padding-top: 0px;
 `
 
 // cafes will be populated at build time by getStaticProps()
@@ -17,7 +18,7 @@ function Cafes({ cafes }) {
   console.log("ok")
   return (
     <Wrapper> 
-
+      <Banner />
       <h2>DESTAQUES</h2>
       {cafes.map((cafe) => {        
           {

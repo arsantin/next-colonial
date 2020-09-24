@@ -1,12 +1,13 @@
 import {createContext, useReducer, useState, useEffect} from 'react';
 import {isLightReducer} from '../reducers/isLightReducer'
 
+
 export const ThemeContext = createContext();
 
 
 const ThemeContextProvider = (props) => {
 	const [isLightTheme, dispatch] = useReducer(isLightReducer);	
-	const [light, setlight] = useState({syntax: '#666', ui: '#0b4577', bg: '#666'});
+	const [light, setlight] = useState({syntax: 'green', ui: '#fff', bg: '#666'});
 	const [dark, setdark] = useState({syntax: '#000', ui: '#de9637', bg: 'yellow'});	
 
 	const toggleTheme = () =>{		
