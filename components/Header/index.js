@@ -10,20 +10,44 @@ import { Modal, Button } from 'antd';
 import styled from 'styled-components'
 
 const Cabecalho = styled.div`
+
+@keyframes example {
+  from {background: #385782;}
+  to {background: #fff;}
+}
   header{    
     position: fixed;
     z-index: 1;
     width: 100%; 
     padding: 0px 20px;
-    align-items: center;  
+    align-items: center;
+    animation-name: example;
+    background: #fff;
+    animation-duration: 3s;
     .section{
-      max-width: 870px;
+      max-width: 1200px;
       display: flex;
       align-items: center;
       margin: auto;
+      justify-content: space-between;
       h3{
         margin: 0px 20px;
         font-size: 13px;
+      }
+      .first{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+      .second{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        .login, .logout{
+          font-size: 11px;
+          color: #666;
+          margin: 0px 10px;
+        }
       }
       .perfil{
         margin: 0px;
@@ -35,10 +59,9 @@ const Cabecalho = styled.div`
           margin: 0px 10px;
           flex-basis: 100%;
           color: #666;
-        }
-        .logout{
-          font-size: 11px;
-        }
+        }        
+      }
+     
       }
     }  
     }
@@ -46,10 +69,6 @@ const Cabecalho = styled.div`
 `  
 
 const Header =()=> {
-
-
-  
-
   return (
     <AuthContext.Consumer>{(authContext) => (
       <ThemeContext.Consumer>{(themeContext) => {
@@ -62,10 +81,13 @@ const Header =()=> {
           <Cabecalho>
           <header style={{ color: theme.syntax }}>
             <div className="section">
-            <div className="logo"><Link href="/"><a><img src="/img/logo.png" alt="" /></a></Link></div>
+              <div className="first">
+                <div className="logo"><Link href="/"><a><img src="/img/logo.png" alt="" /></a></Link></div>
             <h3>O GUIA DA SUA PRAIA</h3>            
-            <Menu/>
-            <ThemeToggle />
+              </div>             
+              <div className="second">
+                <Menu/>
+                <ThemeToggle />
             {isLogged != "" ? (
               <div className="perfil">                
                 <Link href="/profile">
@@ -78,9 +100,13 @@ const Header =()=> {
               </div>
             ) : (
               <Link href="/login">
-                <a className="nav-link">Log In</a>
+                <a className="nav-link login">login</a>
               </Link>
-            )}            
+            )}      
+              </div>
+            
+            
+                  
             </div>                         
           </header>
           </Cabecalho>

@@ -47,7 +47,7 @@ const MyApp =(props)=>{
     return (
       <>
         <Head>
-          <title>GUIA DE ITAPOÁ</title>
+          <title>GUIA DE ITAPOÁ</title>        
           <link rel="stylesheet" href="./css/styles.css"></link>
           <link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css"></link>
           <link

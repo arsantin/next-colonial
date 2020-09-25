@@ -32,17 +32,14 @@ class SimpleMap extends Component {
                 defaultCenter={this.props.center}
                 defaultZoom={this.props.zoom}
               >
-                {
-                  this.props.cafes.map((pin) => {
-                    return <AnyReactComponent
-                      key={pin._id}
-                      lat={pin.geometry.coordinates[0]}
-                      lng={pin.geometry.coordinates[1]}
-                      text={pin.nome}
+                <AnyReactComponent
+                      key="1"
+                      lat="-26.125091"
+                      lng="-48.600774"
+                      text="texto aqui"
                       img="https://curitibacolonial.com.br/cake.png"
-                    />
-                  })
-                }
+                    />                
+                
 
               </GoogleMapReact>
             </div>           

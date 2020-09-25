@@ -1,8 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
 
-class Slide extends React.Component {
-  render() {
+const Slide = () => {
+ 
     var settings = {
       dots: true,
       infinite: true,
@@ -20,8 +20,7 @@ class Slide extends React.Component {
                  
         </div>        
       </Slider>
-    );
-  }
+    );  
 }
 
 export default Slide

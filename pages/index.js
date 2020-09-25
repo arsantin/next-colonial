@@ -11,6 +11,29 @@ const Wrapper = styled.div`
   margin: auto;
   justify-content: space-around;
   padding-top: 0px;
+  .destaques{    
+    margin: 80px auto;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;;
+    flex-basis: 100%;
+    h2{
+      flex-basis: 100%;
+      text-align: center;
+    }
+    .cada{      
+      a{
+        margin: auto;
+      }
+    }
+    .btn{
+      flex-basis: 100%;
+    }    
+  }
+  .map{
+    flex-basis: 100%;
+  }
 `
 
 // cafes will be populated at build time by getStaticProps()
@@ -19,15 +42,25 @@ function Cafes({ cafes }) {
   return (
     <Wrapper> 
       <Banner />
-      <h2>DESTAQUES</h2>
+      <div className="destaques">
+        <h2>DESTAQUES</h2>
       {cafes.map((cafe) => {        
           {
             if(cafe.fotodestaque){
-              return <Cartas key={cafe._id} cafe={cafe}/>
+              return(
+              <div className="cada">
+              <Cartas key={cafe._id} cafe={cafe}/>
+              </div>
+              )
             }
           }
       })} 
-      <button>VER TODO O COMÉRCIO</button>     
+      <div className="btn">VER TODO O COMÉRCIO</div>
+      </div>  
+      <div className="map">
+        <GoogleMap />
+      </div>       
+        
     </Wrapper>
   )
 }

@@ -8,7 +8,7 @@ export const ThemeContext = createContext();
 const ThemeContextProvider = (props) => {
 	const [isLightTheme, dispatch] = useReducer(isLightReducer);	
 	const [light, setlight] = useState({syntax: 'green', ui: '#fff', bg: '#666'});
-	const [dark, setdark] = useState({syntax: '#000', ui: '#de9637', bg: 'yellow'});	
+	const [dark, setdark] = useState({syntax: '#fff', ui: '#385782', bg: '#fff'});	
 
 	const toggleTheme = () =>{		
 		dispatch({type: 'TOGGLE'})

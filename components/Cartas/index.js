@@ -14,6 +14,7 @@ const Cards = styled.div`
   max-width: 280px;
   margin-bottom: 30px;
   padding: 20px;
+  
 `
 
 
@@ -40,7 +41,7 @@ class Cartas extends Component {
                 cover={
                   <img
                     alt="example"
-                    src={`http://guiadeitapoa.com.br/assets/img/${this.props.cafe.avatar}`}
+                    src={this.props.cafe.fotodestaque}
                   />
                 }
                 actions={[
