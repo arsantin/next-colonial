@@ -22,8 +22,9 @@ class SimpleMap extends Component {
         <ThemeContext.Consumer>{(context) => {
           const {isLightTheme, light, dark} = context;
           const theme = isLightTheme ? light : dark;
-          return (
-            <>
+          
+          return (   
+             <>
             
             <h1>MAPA</h1>
             <div style={{ height: '550px', width: '100%', padding: '30px', background: theme.ui, color: theme.syntax }} className="mapa">

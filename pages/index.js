@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Cartas from '../components/Cartas'
 import Banner from '../components/Banner'
+import Destaques from '../components/Destaques'
 import GoogleMap from '../components/GoogleMap'
 
 const Wrapper = styled.div`
@@ -37,30 +38,15 @@ const Wrapper = styled.div`
 `
 
 // cafes will be populated at build time by getStaticProps()
-function Cafes({ cafes }) {
+function Cafes({cafes, user}) {
   console.log("ok")
   return (
     <Wrapper> 
       <Banner />
-      <div className="destaques">
-        <h2>DESTAQUES</h2>
-      {cafes.map((cafe) => {        
-          {
-            if(cafe.fotodestaque){
-              return(
-              <div className="cada">
-              <Cartas key={cafe._id} cafe={cafe}/>
-              </div>
-              )
-            }
-          }
-      })} 
-      <div className="btn">VER TODO O COMÉRCIO</div>
-      </div>  
+      <Destaques cafes={cafes} user={user}/>
       <div className="map">
         <GoogleMap />
-      </div>       
-        
+      </div>  
     </Wrapper>
   )
 }

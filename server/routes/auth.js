@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const passport = require('passport');
 const fetch = require('node-fetch');
+const User = require('../models/User')
 
 /////////////////////AUTH///////////////////////////
 
@@ -51,5 +52,27 @@ router.post('/login',
     console.log(res)
     res.redirect('/');
   });
+
+router.post('/favorito', (req, res, next)=> {
+  const favoritos = req.body.favoritos;
+  const userId = req.body.userId;  
+  const idFavoritar = req.body.idFavoritar
+  console.log("favoritos", favoritos, "userId", userId, "idFavoritar", idFavoritar)
+
+  
+})
+
+router.post('/favorito/remove', (req, res, next)=> {
+  const payload = req.body.favorito;
+  const userId = req.user._id;  
+  User.updateOne(
+      {_id: userId},
+      {$pull: {"favoritos": payload}},
+      {overwrite: true})      
+      .then(function(){
+        res.redirect('/contato') 
+    }).catch()
+  
+})
 
 module.exports = router;

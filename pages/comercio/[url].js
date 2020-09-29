@@ -40,7 +40,7 @@ function Cafe(){
 
   useEffect(() => {
     axios
-      .get(`http://guiadeitapoa.com.br/apicomercios/${url}`)
+      .get(`http://localhost:3001/apicomercios/${url}`)
       .then(res => {
         console.log(res.data[0])
         setCafe(res.data)
@@ -63,9 +63,9 @@ return (
           <Slide fotos={cada.fotos}/>            
           }          
           <div className="left">
-            <img src={`https://guiadeitapoa.com.br/assets/img/${cada.fotodestaque}`} />
+            <img src={cada.fotodestaque} />
             <h1>{cada.nome}</h1>
-          <p>{cada.categoria.nome}</p>
+         
           </div>
           <div className="right">
                           
