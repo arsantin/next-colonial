@@ -22,14 +22,14 @@ const Cards = styled.div`
 const Cartas = (props) => {
   const alert = useAlert()
 
-  function favoritar(_id) {    
-    
+  function favoritar(_id) {
+    console.log(_id)
     axios.get('/profile/perfil')
       .then(function (response) {        
         const dados = []        
-        const favoritos = JSON.stringify(response.data.favoritos);
+        const favoritos = response.data.favoritos;
         const userId = JSON.stringify(response.data._id);
-        const idFavoritar = _id
+        const idFavoritar = JSON.stringify(_id);
 
         axios.post('/minha-conta/favorito', { userId: userId, favoritos: favoritos, idFavoritar: idFavoritar })
       .then(function (response) {        

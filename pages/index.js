@@ -38,14 +38,13 @@ const Wrapper = styled.div`
 `
 
 // cafes will be populated at build time by getStaticProps()
-function Cafes({cafes, user}) {
-  console.log("ok")
+function Cafes({cafes, user}) {  
   return (
     <Wrapper> 
       <Banner />
       <Destaques cafes={cafes} user={user}/>
       <div className="map">
-        <GoogleMap />
+        <GoogleMap cafes={cafes}/>
       </div>  
     </Wrapper>
   )

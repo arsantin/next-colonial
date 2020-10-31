@@ -86,8 +86,23 @@ const Header =()=> {
             <h3>O GUIA DA SUA PRAIA</h3>            
               </div>             
               <div className="second">
-                <Menu/>             
-            
+                <Menu/>
+                <ThemeToggle />
+            {isLogged != "" ? (
+              <div className="perfil">                
+                <Link href="/profile">
+                  <a className="nav-link"><Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} /></a>
+                </Link>
+                <Link href="/minha-conta/logout">
+                  <a className="nav-link logout">sair</a>
+                </Link>
+                
+              </div>
+            ) : (
+              <Link href="/login">
+                <a className="nav-link login">login</a>
+              </Link>
+            )}      
               </div>
             
             

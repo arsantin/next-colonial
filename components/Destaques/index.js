@@ -7,9 +7,7 @@ const Wrapper = styled.div`
   max-width: 1040px;
   flex-basis: 100%;
   margin: 80px auto;
-  .slick-slide{
-    max-width: 300px;
-  }
+  
 `
 
 const Destaque = (props) => {
@@ -33,7 +31,7 @@ const Destaque = (props) => {
             if(cafe.fotodestaque){
               return(
               <div className="cada" key={cafe._id}>
-              <Cartas key={cafe._id} cafe={cafe}/>
+                <Cartas key={cafe._id} cafe={cafe}/>
               </div>
               )
             }

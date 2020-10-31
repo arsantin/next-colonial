@@ -24,25 +24,10 @@ module.exports = {
   },  
   async update(req, res, next){
     const iD = req.body._id
-    const nome = req.body.nome
-    const lat = req.body.lat
-    const lon = req.body.lon
-    const categoria = req.body.categoria
-    const textodestaque = req.body.textodestaque
-    const descricao = req.body.descricao
-    const telefone = req.body.telefone
-    const celular = req.body.celular
-    const facebook = req.body.facebook
-    const instagram = req.body.instagram
-    const site = req.body.site
-    const horarios = req.body.horarios
-    const formasdepgto = req.body.formasdepgto
-    const endereco = req.body.endereco 
-    const cidade = req.body.cidade
     console.log("body", nome, iD)  
     await Comercio.updateOne(
       {_id: ObjectID(iD)},
-      {$set: {"nome": nome, "descricao": descricao}},
+      {$set: req.body},
       {overwrite: true})      
       .then(function(){
         res.redirect('/minha-conta/cadastrocomercio') 

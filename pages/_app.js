@@ -12,13 +12,11 @@ import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
 import styled from 'styled-components'
 
-Router.events.on("routeChangeStart", (url) => {
-  console.log("inicio")
+Router.events.on("routeChangeStart", (url) => { 
   NProgress.start();
 });
 
-Router.events.on("routeChangeComplete", (url) => {
-  console.log("fim")
+Router.events.on("routeChangeComplete", (url) => { 
   NProgress.done();
 });
 

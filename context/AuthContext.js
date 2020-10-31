@@ -9,8 +9,7 @@ const AuthContextProvider = (props)=> {
     axios.get('/profile/perfil')
   .then(function (response) {
     const dados = response.data
-    setisLogged(dados)
-    console.log("ta logado??", dados);
+    setisLogged(dados)   
   })
   .catch(function (error) {
     // handle error

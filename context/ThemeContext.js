@@ -11,9 +11,7 @@ const ThemeContextProvider = (props) => {
 	const [dark, setdark] = useState({syntax: '#fff', ui: '#385782', bg: '#fff'});	
 
 	const toggleTheme = () =>{		
-		dispatch({type: 'TOGGLE'})
-		console.log(dispatch);
-		console.log("is light?", isLightTheme)
+		dispatch({type: 'TOGGLE'})		
 	}
 
 	useEffect(()=>{
